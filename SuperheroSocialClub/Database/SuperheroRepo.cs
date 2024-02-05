@@ -6,8 +6,19 @@ namespace SuperheroSocialClub.Database
     {
         public static List<SuperheroModel> Superheroes { get; set; } = new()
         {
-            new SuperheroModel {Id = 1, Name = "Otto", SecretIdentity = "Wigwen" , Superpower = "Thresh" , Image = "~/images/superhero1.jpg"},
-            new SuperheroModel {Id = 2, Name = "Gustav", SecretIdentity = "CatRalf" , Superpower = "Pantheon" , Image = "~/images/superhero1.jpg2"}
+            new SuperheroModel {
+                Id = 1,
+                Name = "Otto",
+                SecretIdentity = "Wigwen" ,
+                Superpower = "Thresh" ,
+                Image = "superhero1.jpg"
+            },
+            new SuperheroModel {
+                Id = 2,
+                Name = "Gustav",
+                SecretIdentity = "CatRalf" ,
+                Superpower = "Pantheon" ,
+                Image = "superhero2.jpg"}
         };
     }
 }
