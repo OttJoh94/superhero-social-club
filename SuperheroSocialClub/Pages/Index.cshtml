@@ -4,7 +4,30 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container row">
+    <div class="navbar justify-content-around border-bottom">
+        <a class="btn btn-success" asp-page="Add">Add superhero</a>
+        <a class="btn btn-danger" asp-page="Edit">Edit superhero</a>
+    </div>
+
+
+
+
+    @if(Model.Superheroes != null)
+    {
+        @foreach(var superhero in Model.Superheroes)
+        {
+            <div class="col-3 justify-content-center mt-4">
+                <div class="card" style="width: 80%;">
+                    <img class="card-img-top" src="~/images/@superhero.Image" alt="Card image cap">
+                    <div class="card-body">
+                        <h1>@superhero.Name</h1>
+                        <h3>Secret identity @superhero.SecretIdentity</h3>
+                        <h3>Superpower: @superhero.Superpower</h3>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
 </div>
