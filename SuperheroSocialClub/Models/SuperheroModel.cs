@@ -5,12 +5,12 @@
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string? SecretIdentity { get; set; }
-        public string? Superpower { get; set; }
+        public List<string> Superpower { get; set; } = new();
         public string? Image { get; set; }
 
         public SuperheroModel()
         {
-            Image = RandomImage();
+            //Image = RandomImage();
         }
 
         private string RandomImage()

@@ -12,28 +12,40 @@ namespace SuperheroSocialClub.Pages
         public string Name { get; set; }
         public string SecretIdentity { get; set; }
         public string Superpower { get; set; }
+        public List<string> SuperpowersList { get; set; } = SuperheroRepo.Superpowers;
+        public string Image { get; set; } = $"superhero{new Random().Next(1, 21)}.jpg";
 
         public void OnGet()
         {
+            SuperheroRepo.Superpowers.Clear();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPostAddSuperhero()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+
+            List<string> superPowers = new(SuperheroRepo.Superpowers);
 
             SuperheroRepo.Superheroes.Add(new SuperheroModel
             {
                 Id = SuperheroRepo.Superheroes.Count + 1,
                 Name = Name,
                 SecretIdentity = SecretIdentity,
-                Superpower = Superpower,
-                Image = $"superhero{new Random().Next(1, 21)}.jpg"
+                Superpower = superPowers,
+                Image = Image
             });
 
             return RedirectToPage("/Index");
+        }
+
+        public void OnPostAddSuperpower()
+        {
+            SuperheroRepo.Superpowers.Add(Superpower);
+            SuperpowersList = SuperheroRepo.Superpowers;
+
         }
     }
 }
