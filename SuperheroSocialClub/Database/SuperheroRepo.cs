@@ -10,14 +10,27 @@ namespace SuperheroSocialClub.Database
                 Id = 1,
                 Name = "Otto",
                 SecretIdentity = "Wigwen" ,
-                Superpower = "Thresh" ,
+                Superpower = new List<string>()
+                {
+                    "Snabb",
+                    "Träffsäker",
+                } ,
+                Image = $"superhero{new Random().Next(1, 21)}.jpg"
             },
             new SuperheroModel {
                 Id = 2,
                 Name = "Gustav",
                 SecretIdentity = "CatRalf" ,
-                Superpower = "Pantheon" ,
+                Superpower = new List<string>()
+                {
+                    "Snygg",
+                    "Stark",
+                    "Snäll"
+                } ,
+                Image = $"superhero{new Random().Next(1, 21)}.jpg"
             }
         };
+
+        public static List<string> Superpowers { get; set; } = new();
     }
 }
