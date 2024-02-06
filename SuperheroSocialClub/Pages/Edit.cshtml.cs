@@ -20,7 +20,7 @@ namespace SuperheroSocialClub.Pages
             Image = Superhero.Image;
             Name = Superhero.Name;
             SecretIdentity = Superhero.SecretIdentity;
-            Superpower = Superhero.Superpower;
+            //Superpower = Superhero.Superpower;
         }
 
         public IActionResult OnPost()
@@ -34,7 +34,7 @@ namespace SuperheroSocialClub.Pages
 
             superheroToUpdate.Name = Name;
             superheroToUpdate.SecretIdentity = SecretIdentity;
-            superheroToUpdate.Superpower = Superpower;
+            //superheroToUpdate.Superpower = Superpower;
 
 
             return RedirectToPage("/Index");

@@ -13,11 +13,15 @@ namespace SuperheroSocialClub.Pages
         public string SecretIdentity { get; set; }
         public string Superpower { get; set; }
         public List<string> SuperpowersList { get; set; } = SuperheroRepo.Superpowers;
-        public string Image { get; set; } = $"superhero{new Random().Next(1, 21)}.jpg";
+        public string Image { get; set; }
+        private static string image = "";
+
 
         public void OnGet()
         {
             SuperheroRepo.Superpowers.Clear();
+            image = SuperheroRepo.RandomImage();
+            Image = image;
         }
 
         public IActionResult OnPostAddSuperhero()
@@ -35,7 +39,7 @@ namespace SuperheroSocialClub.Pages
                 Name = Name,
                 SecretIdentity = SecretIdentity,
                 Superpower = superPowers,
-                Image = Image
+                Image = image
             });
 
             return RedirectToPage("/Index");
@@ -45,7 +49,7 @@ namespace SuperheroSocialClub.Pages
         {
             SuperheroRepo.Superpowers.Add(Superpower);
             SuperpowersList = SuperheroRepo.Superpowers;
-
+            Image = image;
         }
     }
 }

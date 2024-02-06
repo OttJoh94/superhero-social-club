@@ -32,5 +32,10 @@ namespace SuperheroSocialClub.Database
         };
 
         public static List<string> Superpowers { get; set; } = new();
+
+        public static string RandomImage()
+        {
+            return $"superhero{new Random().Next(1, 21)}.jpg";
+        }
     }
 }
