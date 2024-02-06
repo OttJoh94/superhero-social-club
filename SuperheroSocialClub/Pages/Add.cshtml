@@ -44,5 +44,15 @@
     <label>Superpower:</label>
     <input type="text" placeholder="Superpower" asp-for="@Model.Superpower" />
 
-    <input class="btn btn-primary" type="submit" value="Add superhero   " />
+    <ul>
+        @foreach(string superpower in Model.SuperpowersList) {
+            <li>@superpower</li>
+        }
+    </ul>
+
+    <input class="btn btn-danger" type="submit" value="Add superpower" asp-page-handler="AddSuperpower"/>
+
+    <input class="btn btn-primary" type="submit" value="Add superhero" asp-page-handler="AddSuperhero"/>
+
+
 </form>

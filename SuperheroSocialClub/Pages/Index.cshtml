@@ -9,23 +9,26 @@
         <a class="btn btn-success" asp-page="Add">Add superhero</a>
     </div>
 
-
-
-
     @if(Model.Superheroes != null)
     {
         @foreach(var superhero in Model.Superheroes)
         {
             <div class="col-3 justify-content-center mt-4">
-                <div class="card shadow" style="width: 80%;">
+                <div class="card" style="width: 100%;">
                     <img class="card-img-top" src="~/images/@superhero.Image" alt="Card image cap">
                     <div class="card-body">
                         <h1>@superhero.Name</h1>
-                        <h3>Secret identity @superhero.SecretIdentity</h3>
-                        <h3>Superpower: @superhero.Superpower</h3>
-
-                        <a class="btn btn-danger" asp-page="Edit" asp-route-id="@superhero.Id">Edit</a>
-
+                        <h3 class="fw-normal fst-italic"><span class="fw-bold">Secret identity </span>@superhero.SecretIdentity</h3>
+                        <div class="row">
+                            <h3><span class="fw-bold">Superpowers: </span></h3>
+            @foreach (string superpower in superhero.Superpower)
+                            {
+                                <div class="col-6">
+                                    <h4 class="fw-normal fst-italic">@superpower</h4>
+                                </div>
+                            }
+                        </div>
+                      <a class="btn btn-danger" asp-page="Edit" asp-route-id="@superhero.Id">Edit</a>
                     </div>
                 </div>
             </div>
