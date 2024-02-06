@@ -11,14 +11,13 @@ namespace SuperheroSocialClub.Database
                 Name = "Otto",
                 SecretIdentity = "Wigwen" ,
                 Superpower = "Thresh" ,
-                Image = "superhero1.jpg"
             },
             new SuperheroModel {
                 Id = 2,
                 Name = "Gustav",
                 SecretIdentity = "CatRalf" ,
                 Superpower = "Pantheon" ,
-                Image = "superhero2.jpg"}
+            }
         };
     }
 }
