@@ -7,7 +7,6 @@
 <div class="container row">
     <div class="navbar justify-content-around border-bottom">
         <a class="btn btn-success" asp-page="Add">Add superhero</a>
-        <a class="btn btn-danger" asp-page="Edit">Edit superhero</a>
     </div>
 
     @if(Model.Superheroes != null)
@@ -29,6 +28,7 @@
                                 </div>
                             }
                         </div>
+                      <a class="btn btn-danger" asp-page="Edit" asp-route-id="@superhero.Id">Edit</a>
                     </div>
                 </div>
             </div>
