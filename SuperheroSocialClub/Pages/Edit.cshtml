@@ -5,3 +5,16 @@
 
 @* Bara en placeholder *@
 <h1>Here you can edit your superhero</h1>
+<form method="post">
+
+    <label>Name:</label>
+    <input type="text" placeholder="Name" asp-for="@Model.Name" />
+
+    <label>SecretIdentity:</label>
+    <input type="text" placeholder="SecretIdentity" asp-for="@Model.SecretIdentity" />
+
+    <label>Superpower:</label>
+    <input type="text" placeholder="Superpower" asp-for="@Model.Superpower" />
+
+    <input class="btn btn-primary" type="submit" value="Update superhero" />
+</form>
