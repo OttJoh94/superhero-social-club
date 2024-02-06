@@ -8,8 +8,8 @@ namespace SuperheroSocialClub.Database
         {
             new SuperheroModel {
                 Id = 1,
-                Name = "Otto",
-                SecretIdentity = "Wigwen" ,
+                Name = "Wigwen",
+                SecretIdentity = "Otto" ,
                 Superpower = new List<string>()
                 {
                     "Snabb",
@@ -19,8 +19,8 @@ namespace SuperheroSocialClub.Database
             },
             new SuperheroModel {
                 Id = 2,
-                Name = "Gustav",
-                SecretIdentity = "CatRalf" ,
+                Name = "CatRalf",
+                SecretIdentity = "Gustav" ,
                 Superpower = new List<string>()
                 {
                     "Snygg",
