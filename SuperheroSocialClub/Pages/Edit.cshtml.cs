@@ -8,14 +8,16 @@ namespace SuperheroSocialClub.Pages
     [BindProperties]
     public class EditModel : PageModel
     {
-        public SuperheroModel Superhero { get; set; }
-        public string Name { get; set; }
-        public string SecretIdentity { get; set; }
-        public string Superpower { get; set; }
+        public SuperheroModel? Superhero { get; set; }
+        public string? Image { get; set; }
+        public string? Name { get; set; }
+        public string? SecretIdentity { get; set; }
+        public string? Superpower { get; set; }
         public void OnGet(int id)
         {
             Superhero = SuperheroRepo.Superheroes.FirstOrDefault(hero => hero.Id == id);
 
+            Image = Superhero.Image;
             Name = Superhero.Name;
             SecretIdentity = Superhero.SecretIdentity;
             Superpower = Superhero.Superpower;
